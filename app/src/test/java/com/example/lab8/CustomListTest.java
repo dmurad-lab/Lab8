@@ -26,6 +26,20 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
     }
 
+    @BeforeEach
+    void setUp() {
+        cityList = customList(null, new ArrayList<>());
+        city = new City("New York", "USA");
+        cityList.addCity(city);
+    }
+
+
+    @Test
+    @DisplayName("Test if the city is in the list")
+    void testHasCity() {
+        
+    }
+
 
 }
 
