@@ -37,7 +37,7 @@ public class CustomListTest {
     @Test
     @DisplayName("Test if the city is in the list")
     void testHasCity() {
-        
+        Assertions.assertTrue(cityList.hasCity(city), "City should be in the list");
     }
 
 

@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CustomList extends ArrayAdapter<City> {
 
@@ -45,12 +47,57 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
-    public int getCount(){
+
+
+    /**
+     * This adds a city to the list if the city does not exist
+     * @param city
+     * This is a candidate city to add
+     */
+    public void addCity(City city) {
+        if (cities.contains(city)) {
+            throw new IllegalArgumentException();
+        }
+        cities.add(city);
+    }
+
+    /**
+     * This returns a sorted list of cities
+     * @return
+     * Return the sorted list
+     */
+    public List getCities() {
+        List list = cities;
+        Collections.sort(list);
+        return list;
+    }
+
+
+    /**
+     * Determines if the specified city is in the list.
+     * @param city The city to check for presence in the list.
+     * @return true if the city is in the list, false otherwise.
+     */
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
+
+    /**
+     * Removes the specified city from the list if it is present.
+     * @param city The city to be removed.
+     * @throws IllegalArgumentException if the city is not found in the list.
+     */
+    public void delete(City city) {
+        if (!cities.remove(city)) {
+            throw new IllegalArgumentException("City not found in the list.");
+        }
+    }
+
+    /**
+     * Returns the number of cities in the list.
+     * @return The count of cities in the list.
+     */
+    public int countCities() {
         return cities.size();
     }
 
-    public void addCity(City city){
-
-    }
-
-}
