@@ -41,10 +41,15 @@ public class CustomListTest {
     }
 
     @Test
-    @DisplayName("Test deleting a city from the list")
+    @DisplayName("deleting a city ")
     void testDeleteCity() {
         cityList.delete(city);
         Assertions.assertFalse(cityList.hasCity(city), "City removed from list");
+    }
+    @Test
+    @DisplayName("count of cities inlist")
+    void testCountCities() {
+
     }
 
 }
