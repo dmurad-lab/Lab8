@@ -44,7 +44,7 @@ public class CustomListTest {
     @DisplayName("Test deleting a city from the list")
     void testDeleteCity() {
         cityList.delete(city);
-        Assertions.assertFalse(cityList.hasCity(city), "City should be removed from the list");
+        Assertions.assertFalse(cityList.hasCity(city), "City removed from list");
     }
 
 }
