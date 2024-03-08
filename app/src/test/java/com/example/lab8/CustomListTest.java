@@ -49,7 +49,7 @@ public class CustomListTest {
     @Test
     @DisplayName("count of cities inlist")
     void testCountCities() {
-
+        Assertions.assertEquals(1, cityList.countCities(), "Count should return the correct number of cities in the list");
     }
 
 }
